@@ -1,4 +1,4 @@
-node 'node1'{
+node 'node3'{
 
  	class{'::tomcat':
 	xms		=> "61m",
@@ -7,22 +7,4 @@ node 'node1'{
 	service_state   => 'running',
 	group 		=> 'tomcat',
    }
-}
-node 'node2'{
-
-	class{'::tomcat':
-	xms		=> '70m',
-	xmx		=> '90m',
-	service_state	=> 'running'
- 
-
-
-   }
-}
-node 'default' {
-
-	notify {"checkpoint_1" : 
-
-	message => "***** Default block *** " 
-}
 }
